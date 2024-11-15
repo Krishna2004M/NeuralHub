@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -17,6 +17,7 @@ function App() {
         <Toaster position="top-right" />
         <Navbar />
         <main className="flex-grow">
+          <HashRouter> 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
@@ -24,6 +25,7 @@ function App() {
             <Route path="/auth" element={<Auth />} />
             <Route path="/help" element={<Help />} />
           </Routes>
+          </HashRouter>
         </main>
         <Footer />
       </div>
