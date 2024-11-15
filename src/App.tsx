@@ -13,22 +13,22 @@ import { Toaster } from 'react-hot-toast';
 function App() {
   return (
     <AuthProvider>
-      <div className="min-h-screen bg-slate-50 flex flex-col">
-        <Toaster position="top-right" />
-        <Navbar />
-        <main className="flex-grow">
-          <HashRouter> 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/tools/*" element={<Tools />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/help" element={<Help />} />
-          </Routes>
-          </HashRouter>
-        </main>
-        <Footer />
-      </div>
+      <HashRouter>
+        <div className="min-h-screen bg-slate-50 flex flex-col">
+          <Toaster position="top-right" />
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/tools/*" element={<Tools />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/help" element={<Help />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </HashRouter>
     </AuthProvider>
   );
 }
